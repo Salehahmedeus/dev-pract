@@ -15,6 +15,6 @@ class Patient extends Model
         'phone',
         'dob',
         'gender',
-        'is_admin',
+        
     ];
 }

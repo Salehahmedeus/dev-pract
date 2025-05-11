@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->string('patient_id')->constrained('patient')->onDelete('cascade');
             $table->string('user_id')->comstrained('users')->onDelete("casecade");

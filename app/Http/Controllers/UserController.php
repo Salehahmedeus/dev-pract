@@ -11,6 +11,10 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
+
+
+
+
     public function register(Request $request)
     {
 
@@ -20,7 +24,7 @@ class UserController extends Controller
             'name' => ['string', 'required'],
             'password' => ['required', 'string'],
         ]);
-        $user=User::create([
+        $user = User::create([
             'username' => $input['username'],
             'name' => $input['name'],
             'password' => Hash::make($input['password'])
@@ -48,11 +52,7 @@ class UserController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'Bearer',
-
-        ]);
+        return redirect()->route('dashboard');
     }
 
     public function logout()

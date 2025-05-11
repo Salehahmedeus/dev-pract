@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('phone');
             $table->date('dob')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
-            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
